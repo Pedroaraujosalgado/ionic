@@ -1,0 +1,8 @@
+{
+  "name": "projeto-treinamento",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
