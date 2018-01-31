@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MyAppProvider } from '../../providers/my-app/my-app';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
+  lista_completa:any;
   tweets: string[];
   items: string[];
   tweet: any;
@@ -15,20 +17,20 @@ export class HomePage {
   constructor(public navCtrl: NavController, public My_appProvider: MyAppProvider,) {
   this.zeraLista();
   //this.tweets = ['P','E','D','R','O'];
-  this.tweet = this.getMy_app();
+  this.getMy_app();
   this.initializeItems();
   }
 
   getMy_app(){
     this.My_appProvider.getMy_app()
     .then(dados => {
-      this.tweet = dados;
+      this.lista_completa = dados;
       console.log(this.tweet);
     });
   }
 
   zeraLista(){
-      this.My_app = this.getMy_app();
+      this.tweets = this.getMy_app();
   }
 
   initializeItems() {
